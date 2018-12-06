@@ -19,9 +19,6 @@ function newGame() {
 
 document.onkeyup = function (event) {
     if (event.keyCode > 64 && event.keyCode < 91 && guesses.indexOf(event.key) === -1) {
-        console.log(guesses.indexOf(event.keycode));
-        console.log(guesses);
-        console.log(event.keyCode);
         if (event.keyCode === compGuess) {
             wins++;
             newGame();
