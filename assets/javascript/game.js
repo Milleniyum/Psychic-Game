@@ -18,13 +18,13 @@ function newGame() {
 }
 
 document.onkeyup = function (event) {
-    if (event.keyCode > 64 && event.keyCode < 91 && guesses.indexOf(event.key) === -1) {
+    if (event.keyCode > 64 && event.keyCode < 91 && guesses.indexOf(event.key.toLowerCase()) === -1) {
         if (event.keyCode === compGuess) {
             wins++;
             newGame();
         } else {
             remaining--;
-            guesses.push(event.key.toLowerCase);
+            guesses.push(event.key.toLowerCase());
             remainingP.textContent = "Guesses left: " + remaining;
             guessesP.textContent += " " + event.key.toLowerCase();
             if (remaining === 0) {
