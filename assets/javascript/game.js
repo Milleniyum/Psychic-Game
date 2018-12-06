@@ -24,7 +24,7 @@ document.onkeyup = function (event) {
             newGame();
         } else {
             remaining--;
-            guesses.push(event.key);
+            guesses.push(event.key.toLowerCase);
             remainingP.textContent = "Guesses left: " + remaining;
             guessesP.textContent += " " + event.key.toLowerCase();
             if (remaining === 0) {
